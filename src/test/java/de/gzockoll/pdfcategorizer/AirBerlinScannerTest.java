@@ -19,7 +19,7 @@ import org.junit.Test;
 public class AirBerlinScannerTest {
 	private static DocumentScanner scanner;
 
-	private static final String CORRECT_MATCH="Air Berlin PLC & Co. Luftverkehrs KG\n\nRechnung und Reisebest‰tigung\n\nBuchungs/Rechnungsnummer 12345\n\nBuchungsdatum 26.04.2011\n\n....";
+	private static final String CORRECT_MATCH="Air Berlin PLC & Co. Luftverkehrs KG\n\nRechnung und Reisebest√§tigung\n\nBuchungs/Rechnungsnummer 12345\n\nBuchungsdatum 26.04.2011\n\n....";
 	@Before
 	public void setUp() throws Exception {
 		scanner=new AirBerlinScanner();

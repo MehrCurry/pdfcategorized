@@ -10,7 +10,7 @@ public class AirBerlinScanner extends AbstractInvoiceScanner implements Document
 	private DataExtractor documentChecker;
 
 	public AirBerlinScanner() {
-		documentChecker=new DataExtractor(".*Air Berlin PLC & Co. Luftverkehrs KG.*Rechnung und Reisebest‰tigung.*");
+		documentChecker=new DataExtractor(".*Air Berlin PLC & Co. Luftverkehrs KG.*Rechnung und Reisebest√§tigung.*");
 		invoiceNumberExtractor=new DataExtractor(".*Buchungs/Rechnungsnummer (\\d+).*");
 		dateExtractor=new DataExtractor(".*Buchungsdatum (\\d{2}\\.\\d{2}\\.\\d{4}).*");
 	}

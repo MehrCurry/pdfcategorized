@@ -12,7 +12,7 @@ public class TelekomScanner extends AbstractInvoiceScanner implements DocumentSc
 	private DataExtractor docChecker;
 	
 	public TelekomScanner() {
-		docChecker=new DataExtractor(".*Mobilfunk-Rechnung für (\\w+ \\d+).*");
+		docChecker=new DataExtractor(".*Mobilfunk-Rechnung fÃ¼r (\\w+ \\d+).*");
 		invoiceNumberExtractor=new DataExtractor(".*Rechnungsnummer (\\d+).*");
 		// customerNumberExtractor=new DataExtractor(".*Kundenkonto (\\d+).*");
 		dateExtractor = new DataExtractor(".*Datum (\\d{2}\\.\\d{2}\\.\\d{2}).*");
