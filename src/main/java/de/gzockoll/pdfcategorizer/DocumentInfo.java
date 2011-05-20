@@ -9,6 +9,7 @@ public class DocumentInfo {
 	private String description;
 	private DocumentCategory category;
 	private String fileName;
+	private String suggestedFileName;
 	
 	public DocumentInfo(String text, Date date, String title, String description, DocumentCategory category) {
 		super();
@@ -18,6 +19,7 @@ public class DocumentInfo {
 		this.description = description;
 		this.category = category;
 	}
+	
 	public Date getDate() {
 		return date;
 	}
@@ -42,4 +44,13 @@ public class DocumentInfo {
 	public String getText() {
 		return text;
 	}
+
+	public String getSuggestedFileName() {
+		return suggestedFileName;
+	}
+
+	public void setSuggestedFileName(String suggestedFileName) {
+		this.suggestedFileName = suggestedFileName;
+	}
+	
 }
