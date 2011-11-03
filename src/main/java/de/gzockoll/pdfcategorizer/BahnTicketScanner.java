@@ -14,7 +14,7 @@ public class BahnTicketScanner extends AbstractInvoiceScanner implements Documen
 		docChecker=new DataExtractor(".*BAHN.*Online-Ticket.*");
 		invoiceNumberExtractor=new DataExtractor(".*Auftragsnummer:.*([A-Z]{6}).*");
 		dateExtractor = new DataExtractor(".*Datum (\\d{2}\\.\\d{2}\\.\\d{4}).*");
-		sumExtractor = new DataExtractor(".*Summe (\\d+\\,\\d{2})€.*");
+		sumExtractor = new DataExtractor(".*Summe (\\d+\\,\\d{2}).*");
 	}
 	/* (non-Javadoc)
 	 * @see de.gzockoll.pdfcategorizer.DocumentScanner#scan(java.lang.String)

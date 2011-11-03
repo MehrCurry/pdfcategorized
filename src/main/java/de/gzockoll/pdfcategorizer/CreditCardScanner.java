@@ -20,7 +20,7 @@ public class CreditCardScanner extends AbstractDateScanner implements DocumentSc
 	@Override
 	public DocumentInfo scan(String text) {
 		Date date = getDate(dateExtractor,text);
-		String title = "Kreditkartenabrechnung für " + new SimpleDateFormat("MMM yyyy",Locale.GERMAN).format(date);
+		String title = "Kreditkartenabrechnung fÃ¼r " + new SimpleDateFormat("MMM yyyy",Locale.GERMAN).format(date);
 		String description = title + " Kundennummer: " + customerNumberExtractor.getData(text) + " Kreditkartennummer: " + cardNumberExtractor.getData(text);
 		return new DocumentInfo(text,date, title, description,getCategory());
 	}
