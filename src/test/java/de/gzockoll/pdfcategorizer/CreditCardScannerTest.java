@@ -39,7 +39,7 @@ public class CreditCardScannerTest {
 	@Test
 	public void testGetTitle() throws ParseException {
 		DocumentInfo info = scanner.scan(CORRECT_MATCH);
-		assertThat(info.getTitle(),is("Kreditkartenabrechnung für Feb 2011"));
+		assertThat(info.getTitle(),is("Kreditkartenabrechnung fÃ¼r Feb 2011"));
 	}
 	
 	@Test 
@@ -53,7 +53,7 @@ public class CreditCardScannerTest {
 		assertTrue(scanner.supports(text));
 		DocumentInfo info = scanner.scan(text);
 		assertThat(info.getDate(),is(DateFormat.getDateInstance(DateFormat.SHORT,Locale.GERMAN).parse("21.02.2011")));
-		assertThat(info.getTitle(),is("Kreditkartenabrechnung für Feb 2011"));
+		assertThat(info.getTitle(),is("Kreditkartenabrechnung fÃ¼r Feb 2011"));
 		
 	}
 }
