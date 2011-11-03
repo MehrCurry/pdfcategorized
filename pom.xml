@@ -3,6 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.gzockoll</groupId>
 	<artifactId>pdfcategorizer</artifactId>
+	<packaging>bundle</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
@@ -39,6 +40,17 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<plugin>    <!-- (2) START -->
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Export-Package>de.gzockoll.pdfcategorizer.api.*</Export-Package>
+						<Private-Package>de.gzockoll.pdfcategorizer.*</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>    <!-- (2) END -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
