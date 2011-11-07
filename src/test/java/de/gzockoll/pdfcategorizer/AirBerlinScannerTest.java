@@ -58,4 +58,24 @@ public class AirBerlinScannerTest {
         assertThat(info.getTitle(), is("AirBerlin Rechnung 12529529"));
 
     }
+	@Test
+	public void testGetTitle() throws ParseException {
+		DocumentInfo info = scanner.scan(CORRECT_MATCH);
+		assertThat(info.getTitle(),is("AirBerlin Rechnung 12345"));
+	}
+	
+	// @Test 
+	public void testWithRealData() throws IOException, ParseException {
+		PDFTextStripper stripper = new PDFTextStripper();
+		String text=null;
+		try {
+			text = stripper.getText(PDDocument.load("src/main/resources/12529529.pdf"));
+		} catch (NullPointerException e) {
+		}
+		assertTrue(scanner.supports(text));
+		DocumentInfo info = scanner.scan(text);
+		assertThat(info.getDate(),is(DateFormat.getDateInstance(DateFormat.SHORT,Locale.GERMAN).parse("26.04.2011")));
+		assertThat(info.getTitle(),is("AirBerlin Rechnung 12529529"));
+		
+	}
 }
