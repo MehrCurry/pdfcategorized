@@ -1,16 +1,21 @@
 package de.gzockoll.pdfcategorizer;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
+import org.junit.Ignore;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 
 public class TelekomScannerTest {
-	// @Test
+
+	@Ignore("Test fails unexpectedly")
+	@Test
 	public void testSupports() {
 		String text=getText(new File("src/main/resources/Rechnung_2011_02_13221877000781.pdf"));
 		DocumentScanner scanner=new TelekomScanner();
